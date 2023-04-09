@@ -1,0 +1,330 @@
+.light-txt {
+  color: #a09fb1;
+}
+
+.light-purple-txt {
+  color: #88869d;
+}
+
+* {
+  font-family: "Raleway", sans-serif;
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+button {
+  border: none;
+  background: none;
+}
+
+body {
+  max-width: 1440px;
+  margin: auto;
+  color: white;
+}
+
+header {
+  min-height: 100vh;
+  background-color: #1e213a;
+  text-align: center;
+  padding: 1rem;
+  position: relative;
+  overflow: hidden;
+}
+header .location-bar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+header .location-bar .search-toggle-btn {
+  background: #6e707a;
+  color: white;
+  padding: 10px 1rem;
+  box-shadow: 0 1px 3px 3px rgba(0, 0, 0, 0.3);
+}
+header .location-bar .location-toggle-btn {
+  background-color: #6e707a;
+  width: 30px;
+  height: 30px;
+  display: inline-grid;
+  place-items: center;
+  border-radius: 50px;
+}
+header .location-bar .location-toggle-btn img {
+  width: 1.2rem;
+}
+header .weather-img-container {
+  margin-top: 4rem;
+}
+header .weather-img-container img {
+  width: 40%;
+}
+header .temperature {
+  margin-bottom: 2rem;
+}
+header .temperature .number {
+  font-size: 6rem;
+}
+header .temperature .unit {
+  font-size: 2rem;
+}
+header .weather {
+  font-size: 2rem;
+}
+header .time {
+  margin: 1.5rem 0;
+}
+header .time .dot {
+  display: inline-block;
+  width: 3px;
+  height: 3px;
+  background: #88869d;
+  vertical-align: middle;
+  border-radius: 50px;
+  margin: 0 10px;
+}
+header .location-pin {
+  width: 1.2rem;
+  vertical-align: middle;
+}
+header .search-bar {
+  position: absolute;
+  background-color: #1e213a;
+  inset: 0;
+  transform: translateX(-100%);
+  opacity: 0;
+  transition: transform 0.3s ease, opacity 0.6s ease;
+  padding: 1rem;
+  z-index: 10;
+}
+header .search-bar.active {
+  transform: translateX(0);
+  opacity: 1;
+}
+header .search-bar .close-bar {
+  text-align: end;
+}
+header .search-bar .close-bar .close-btn img {
+  width: 25px;
+}
+header .search-bar .search-section {
+  display: flex;
+  gap: 10px;
+  margin-top: 1rem;
+}
+header .search-bar .search-section .input-group {
+  width: 100%;
+  border: 1px solid white;
+  text-align: start;
+  padding: 0 10px;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+header .search-bar .search-section .input-group .search-icon {
+  width: 20px;
+}
+header .search-bar .search-section .input-group input {
+  border: none;
+  background: none;
+  outline: none;
+  height: 45px;
+  width: 100%;
+  color: white;
+}
+header .search-bar .search-section .input-group input::placeholder {
+  color: #6e707a;
+}
+header .search-bar .search-section .search-btn {
+  background: #3c47e9;
+  color: white;
+  padding: 0 1rem;
+}
+header .search-bar .location-history {
+  margin-top: 2rem;
+  max-height: 80%;
+  overflow-y: scroll;
+}
+header .search-bar .location-history .history-card {
+  border: 1.5px solid #6e707a;
+  height: 55px;
+  margin-top: 1rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px;
+}
+header .search-bar .location-history .history-card img {
+  width: 20px;
+}
+header .bg-img {
+  position: absolute;
+  filter: opacity(0.1);
+  width: 100%;
+  left: 0;
+  top: 16%;
+  scale: 1.7;
+}
+
+main {
+  min-height: 100vh;
+  background: #100e1d;
+}
+
+.daily-forecast {
+  padding: 3rem 2rem;
+}
+.daily-forecast .unit-togglers {
+  display: none;
+}
+.daily-forecast .daily-forecast-cards {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.3rem;
+  text-align: center;
+  font-size: 18px;
+}
+.daily-forecast .daily-forecast-cards article {
+  background: #1e213a;
+  padding: 1rem;
+}
+.daily-forecast .daily-forecast-cards article img {
+  width: 80px;
+}
+.daily-forecast .daily-forecast-cards article .temperature {
+  margin-top: 2rem;
+}
+.daily-forecast .daily-forecast-cards article .temperature .max {
+  margin-left: 1rem;
+  color: #88869d;
+}
+
+.today-highlights {
+  padding: 2rem 1rem;
+}
+.today-highlights h2 {
+  margin-bottom: 2rem;
+}
+.today-highlights .highlight-cards {
+  text-align: center;
+  display: grid;
+  gap: 1.5rem;
+}
+.today-highlights .highlight-cards article {
+  background: #1e213a;
+  padding: 1.5rem;
+}
+.today-highlights .highlight-cards article h4 {
+  font-weight: 500;
+}
+.today-highlights .highlight-cards article h4 + div,
+.today-highlights .highlight-cards article div:nth-child(3) {
+  margin-top: 1rem;
+}
+.today-highlights .highlight-cards article h4 + div .number {
+  font-size: 4rem;
+  font-weight: 700;
+}
+.today-highlights .highlight-cards article h4 + div .unit {
+  font-size: 2rem;
+}
+.today-highlights .highlight-cards article.wind .wind-direction {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.today-highlights .highlight-cards article.wind .wind-direction .indicator {
+  display: inline-grid;
+  width: 25px;
+  height: 25px;
+  background: #6e707a;
+  border-radius: 50px;
+  margin-right: 10px;
+  place-items: center;
+}
+.today-highlights .highlight-cards article.wind .wind-direction .indicator img {
+  width: 10px;
+}
+.today-highlights .highlight-cards article.humidity .progress {
+  font-weight: 700;
+}
+.today-highlights .highlight-cards article.humidity .progress .progress-indicators {
+  display: flex;
+  justify-content: space-between;
+  padding: 0 5px;
+  margin-bottom: 2px;
+}
+.today-highlights .highlight-cards article.humidity .progress .progress-bar {
+  height: 10px;
+  background-color: white;
+  border-radius: 50px;
+}
+.today-highlights .highlight-cards article.humidity .progress .progress-bar .progress-done {
+  height: 100%;
+  background-color: #ffec65;
+  border-radius: 50px;
+  width: 80%;
+}
+.today-highlights .highlight-cards article.humidity .progress p {
+  text-align: end;
+  margin-top: 2px;
+}
+
+@media (min-width: 600px) {
+  .highlight-cards {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+/* If screen size is more than 1023px (targeting 1024px and above screen */
+@media (min-width: 1023px) {
+  body {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+  }
+  body header {
+    padding: 2rem;
+  }
+  body header .bg-img {
+    top: 7%;
+  }
+  .daily-forecast {
+    padding: 2rem 4rem 3rem 4rem;
+  }
+  .daily-forecast .unit-togglers {
+    display: flex;
+    justify-content: flex-end;
+    gap: 10px;
+    margin-bottom: 3rem;
+  }
+  .daily-forecast .unit-togglers button {
+    width: 30px;
+    height: 30px;
+    border-radius: 50px;
+    font-weight: bold;
+    color: white;
+    background: #585676;
+  }
+  .daily-forecast .unit-togglers button.active {
+    background: white;
+    color: #100e1d;
+  }
+  .daily-forecast .daily-forecast-cards {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+  .today-highlights {
+    padding: 2rem 4rem 3rem 4rem !important;
+  }
+}
+@media (min-width: 1365px) {
+  .daily-forecast-cards {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+/*
+1. minor padding change
+2. Update the weather data based on user query
+ - Bonus: preferrably user exact location
+*/
+
+/*# sourceMappingURL=style.css.map */

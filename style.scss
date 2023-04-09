@@ -1,0 +1,340 @@
+// colors
+$primary-color: #100e1d;
+$secondary-color: #1e213a;
+$tertiary-color: #585676;
+$grey-color: #6e707a;
+$yellow-color: #ffec65;
+$btn-bg: #3c47e9;
+
+// utilities
+.light-txt {
+  color: #a09fb1;
+}
+
+.light-purple-txt {
+  color: #88869d;
+}
+// universal styles
+* {
+  font-family: "Raleway", sans-serif;
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+button {
+  border: none;
+  background: none;
+}
+
+// main styles
+body {
+  max-width: 1440px;
+  margin: auto;
+  color: white;
+}
+
+header {
+  min-height: 100vh;
+  background-color: $secondary-color;
+  text-align: center;
+  padding: 1rem;
+  position: relative;
+  overflow: hidden;
+  .location-bar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    .search-toggle-btn {
+      background: $grey-color;
+      color: white;
+      padding: 10px 1rem;
+      box-shadow: 0 1px 3px 3px rgba(0, 0, 0, 0.3);
+    }
+    .location-toggle-btn {
+      background-color: $grey-color;
+      width: 30px;
+      height: 30px;
+      display: inline-grid;
+      place-items: center;
+      border-radius: 50px;
+      img {
+        width: 1.2rem;
+      }
+    }
+  }
+  .weather-img-container {
+    margin-top: 4rem;
+    img {
+      width: 40%;
+    }
+  }
+  .temperature {
+    margin-bottom: 2rem;
+    .number {
+      font-size: 6rem;
+    }
+    .unit {
+      font-size: 2rem;
+    }
+  }
+  .weather {
+    font-size: 2rem;
+  }
+  .time {
+    margin: 1.5rem 0;
+    .dot {
+      display: inline-block;
+      width: 3px;
+      height: 3px;
+      background: #88869d;
+      vertical-align: middle;
+      border-radius: 50px;
+      margin: 0 10px;
+    }
+  }
+  .location-pin {
+    width: 1.2rem;
+    vertical-align: middle;
+  }
+  .search-bar {
+    position: absolute;
+    background-color: $secondary-color;
+    inset: 0;
+    transform: translateX(-100%);
+    opacity: 0;
+    transition: transform 0.3s ease, opacity 0.6s ease;
+    padding: 1rem;
+    z-index: 10;
+    &.active {
+      transform: translateX(0);
+      opacity: 1;
+    }
+    .close-bar {
+      text-align: end;
+      .close-btn img {
+        width: 25px;
+      }
+    }
+    .search-section {
+      display: flex;
+      gap: 10px;
+      margin-top: 1rem;
+      .input-group {
+        width: 100%;
+        border: 1px solid white;
+        text-align: start;
+        padding: 0 10px;
+        display: flex;
+        align-items: center;
+        gap: 5px;
+        .search-icon {
+          width: 20px;
+        }
+        input {
+          border: none;
+          background: none;
+          outline: none;
+          height: 45px;
+          width: 100%;
+          color: white;
+          &::placeholder {
+            color: $grey-color;
+          }
+        }
+      }
+      .search-btn {
+        background: $btn-bg;
+        color: white;
+        padding: 0 1rem;
+      }
+    }
+    .location-history {
+      margin-top: 2rem;
+      max-height: 80%;
+      overflow-y: scroll;
+      .history-card {
+        border: 1.5px solid #6e707a;
+        height: 55px;
+        margin-top: 1rem;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 12px;
+        img {
+          width: 20px;
+        }
+      }
+    }
+  }
+  .bg-img {
+    position: absolute;
+    filter: opacity(0.1);
+    width: 100%;
+    left: 0;
+    top: 16%;
+    scale: 1.7;
+  }
+}
+
+main {
+  min-height: 100vh;
+  background: $primary-color;
+}
+
+.daily-forecast {
+  padding: 3rem 2rem;
+  .unit-togglers {
+    display: none;
+  }
+  .daily-forecast-cards {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.3rem;
+    text-align: center;
+    font-size: 18px;
+    article {
+      background: $secondary-color;
+      padding: 1rem;
+      img {
+        width: 80px;
+      }
+      .temperature {
+        margin-top: 2rem;
+        .max {
+          margin-left: 1rem;
+          color: #88869d;
+        }
+      }
+    }
+  }
+}
+
+.today-highlights {
+  padding: 2rem 1rem;
+  h2 {
+    margin-bottom: 2rem;
+  }
+  .highlight-cards {
+    text-align: center;
+    display: grid;
+    gap: 1.5rem;
+    article {
+      background: $secondary-color;
+      padding: 1.5rem;
+      h4 {
+        font-weight: 500;
+      }
+      h4 + div,
+      div:nth-child(3) {
+        margin-top: 1rem;
+      }
+      h4 + div {
+        .number {
+          font-size: 4rem;
+          font-weight: 700;
+        }
+        .unit {
+          font-size: 2rem;
+        }
+      }
+    }
+    article.wind .wind-direction {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      .indicator {
+        display: inline-grid;
+        width: 25px;
+        height: 25px;
+        background: $grey-color;
+        border-radius: 50px;
+        margin-right: 10px;
+        place-items: center;
+        img {
+          width: 10px;
+        }
+      }
+    }
+    article.humidity .progress {
+      font-weight: 700;
+      .progress-indicators {
+        display: flex;
+        justify-content: space-between;
+        padding: 0 5px;
+        margin-bottom: 2px;
+      }
+      .progress-bar {
+        height: 10px;
+        background-color: white;
+        border-radius: 50px;
+        .progress-done {
+          height: 100%;
+          background-color: $yellow-color;
+          border-radius: 50px;
+          width: 80%;
+        }
+      }
+      p {
+        text-align: end;
+        margin-top: 2px;
+      }
+    }
+  }
+}
+
+@media (min-width: 600px) {
+  .highlight-cards {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+/* If screen size is more than 1023px (targeting 1024px and above screen */
+@media (min-width: 1023px) {
+  body {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    header {
+      padding: 2rem;
+      .bg-img {
+        top: 7%;
+      }
+    }
+  }
+  .daily-forecast {
+    padding: 2rem 4rem 3rem 4rem;
+    .unit-togglers {
+      display: flex;
+      justify-content: flex-end;
+      gap: 10px;
+      margin-bottom: 3rem;
+      button {
+        width: 30px;
+        height: 30px;
+        border-radius: 50px;
+        font-weight: bold;
+        color: white;
+        background: #585676;
+        &.active {
+          background: white;
+          color: #100e1d;
+        }
+      }
+    }
+    .daily-forecast-cards {
+      grid-template-columns: 1fr 1fr 1fr;
+    }
+  }
+  .today-highlights {
+    padding: 2rem 4rem 3rem 4rem !important;
+  }
+}
+@media (min-width: 1365px) {
+  .daily-forecast-cards {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+/*
+1. minor padding change
+2. Update the weather data based on user query
+ - Bonus: preferrably user exact location
+*/

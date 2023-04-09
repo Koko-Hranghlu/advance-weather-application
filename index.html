@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1,
+  maximum-scale=5"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Raleway:wght@500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+    <script
+      defer
+      src="script.js"
+      type="text/javascript"
+      charset="utf-8"
+    ></script>
+    <title>Weather App | Devchallenges</title>
+  </head>
+  <body>
+    <header>
+      <section class="location-bar">
+        <button class="search-toggle-btn">Search for places</button>
+        <button class="location-toggle-btn">
+          <img src="my-location.svg" />
+        </button>
+      </section>
+      <div class="weather-img-container">
+        <img src="Shower.png" />
+      </div>
+      <div class="temperature">
+        <span class="number">15</span>
+        <span class="light-txt unit">&#8451;</span>
+      </div>
+      <p class="weather light-txt">Shower</p>
+      <div class="time light-purple-txt">
+        <span class="day">Today</span>
+        <span class="dot"></span>
+        <span class="calendar">Fri, 8 Jun</span>
+      </div>
+      <p>
+        <img src="location-pin.svg" class="location-pin" />
+        <span class="location-name light-purple-txt">Hielinski</span>
+      </p>
+      <nav class="search-bar">
+        <div class="close-bar">
+          <button class="close-btn"><img src="close.svg" /></button>
+        </div>
+        <div class="search-section">
+          <div class="input-group">
+            <img class="search-icon" src="search.svg" />
+            <input type="text" placeholder="search location" />
+          </div>
+          <button class="search-btn">Search</button>
+        </div>
+        <div class="location-history">
+          <article class="history-card">
+            London <img src="chevron-right.svg"/>
+          </article>
+          <article class="history-card">
+            London <img src="chevron-right.svg"/>
+          </article>
+          <article class="history-card">
+            London <img src="chevron-right.svg"/>
+          </article>
+        </div>
+      </nav>
+      <img class="bg-img" src="Cloud-background.png"/>
+    </header>
+    <main>
+      <section class="daily-forecast">
+        <div class="unit-togglers">
+          <button class="active celsius-toggle-btn">&#8451;</button>
+          <button class="fahrenheit-toggle-btn">&#8457;</button>
+        </div>
+        <section class="daily-forecast-cards">
+          <article>
+            <div class="time">
+              <span class="day">Tommorrow</span>
+            </div>
+            <div class="weather-img-container">
+              <img src="Sleet.png" />
+            </div>
+            <div class="temperature">
+              <span class="min">16 &#8451;</span>
+              <span class="max">11 &#8451;</span>
+            </div>
+          </article>
+          <article>
+            <div class="time">
+              <span class="day">Tommorrow</span>
+            </div>
+            <div class="weather-img-container">
+              <img src="Sleet.png" />
+            </div>
+            <div class="temperature">
+              <span class="min">16 &#8451;</span>
+              <span class="max">11 &#8451;</span>
+            </div>
+          </article>
+          <article>
+            <div class="time">
+              <span class="day">Tommorrow</span>
+            </div>
+            <div class="weather-img-container">
+              <img src="Sleet.png" />
+            </div>
+            <div class="temperature">
+              <span class="min">16 &#8451;</span>
+              <span class="max">11 &#8451;</span>
+            </div>
+          </article>
+          <article>
+            <div class="time">
+              <span class="day">Tommorrow</span>
+            </div>
+            <div class="weather-img-container">
+              <img src="Sleet.png" />
+            </div>
+            <div class="temperature">
+              <span class="min">16 &#8451;</span>
+              <span class="max">11 &#8451;</span>
+            </div>
+          </article>
+          <article>
+            <div class="time">
+              <span class="day">Tommorrow</span>
+            </div>
+            <div class="weather-img-container">
+              <img src="Sleet.png" />
+            </div>
+            <div class="temperature">
+              <span class="min">16 &#8451;</span>
+              <span class="max">11 &#8451;</span>
+            </div>
+          </article>
+        </section>
+      </section>
+      <section class="today-highlights">
+        <h2>Today's Highlights</h2>
+        <section class="highlight-cards">
+          <article class="wind">
+            <h4>Wind Status</h4>
+            <div>
+              <span class="number">7</span>
+              <span class="unit">mph</span>
+            </div>
+            <div class="wind-direction">
+              <span class="indicator">
+                <img src="wind-direction.svg" />
+              </span>
+              <span class="abbreviation">N</span>
+            </div>
+          </article>
+          <article class="humidity">
+            <h4>Humidity</h4>
+            <div>
+              <span class="number">84</span>
+              <span class="unit">%</span>
+            </div>
+            <div class="progress">
+              <div class="light-txt progress-indicators">
+                <span>0</span>
+                <span>50</span>
+                <span>100</span>
+              </div>
+              <div class="progress-bar">
+                <div class="progress-done"></div>
+              </div>
+              <p class="light-txt">%</p>
+            </div>
+          </article>
+          <article class="visibility">
+            <h4>Visibility</h4>
+            <div>
+              <span class="number">6.4</span>
+              <span class="unit">miles</span>
+            </div>
+          </article>
+          <article class="air-pressure">
+            <h4>Air Pressure</h4>
+            <div>
+              <span class="number">998</span>
+              <span class="unit">mb</span>
+            </div>
+          </article>
+        </section>
+      </section>
+    </main>
+  </body>
+</html>
